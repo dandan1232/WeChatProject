@@ -1,0 +1,39 @@
+/* components/songlist/songlist.wxss */
+.songlist-container {
+  height: 100rpx;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+.songlist-id {
+  font-size: 30rpx;
+  color: blue;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.15);
+  position: absolute;
+  right:10rpx;
+  top: 4rpx;
+  padding-left: 26rpx;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFRUlEQVR4Xu2aW2wUZRTH/6ftfFTijRQTFHa24GVnMSaoQTExIg++iQ9qokYfvGti4v1BCH1SW1Qk4RJE8RYjahOVcEl8MAYREkBjgg/tzgICOwuIaZfWBbT9pu0xU7tAuizs+WYGTLv71vb8///z/fbM7ZsSxvmHxvn6UQNQm4BxTqB2CIzzAaidBGuHQO0QGOcEaofA+RyAbGLi7CEauJcZDhGSBEwJ8hk4wowcEdw6bvg2lf/7l/PVV+wTkElaS8E0l4CZABqrXFgfA50g3pLO+S9XqTEqiw1AJmEtIaKnAFxq1NkpUZGZ16Tz/qshfc4ojxyAm7AeB9HrAK6KuOHDYG5x8v7HUfpGCiBrq40M3B1lg6O9CNiU8vT8qDIiA+Daah+A6VE1dg6f/Y6nZ0SRFQmArK0yDDhRNFStBwFuytPpausr1YUGkElY7xJRrGfqSs0z89J03n8lDIRQANyk9QSYPgzTQGgt8ZNOzv/I1McYwGag4UpbFSK4zJn2XtIV//B00zxgwMTIGIBrq68APGASGoOm3fH0gya+RgAyzWimIZUFoExCY9BortOp9AEckHobAXAT1mYQ3SkNi7We+Ucn78+TZpgBsK0egC6XhsVbz72O50+SZogBdE5Hsm5QiUet1Fhy/TY0zpqNo++9g8KqJRgq9kp7rlg/VK+bZ+5HTmIoBpCxVRsBr0lCSrUT59yBRPv3J6V6r4vCyrdQXPeFiV2ZhoHFaU8vkJiJAWQTajsT5khCKgEo/f7Yd+tQWLEY/R27TGxPaoixI5XXt0lMxADcpMqBYUtCzgWg9PfCijYUlr0J9n0Te4DgOTmdlIjlABLqGAgXS0KqBRDUDRw5hK7WBSiub5dHMI47eX2JRCgHYKtBAHWSkEoAutoWYvJLLaDGi8rsej9bjT9bXpDGDDmerpeITACwJOD02tEnwQBAw5SpmPTYc2WWencn9t91ozjK8bRoTaLioBvXVv2md4BlV4EDe6GarylbZH/Hb+hqW4ATW3+QAtCOpydIRAYArC6AJktCqj0HsO5HV+tC9Hyy0sQ+2F/udjz/ColYDCBjq46RHV5JznDt6Ak43aB37RoUlrdi4MhhsW9JEOwkpz19vcRADMC11dcA7pOEnG0C/tm5dfhm6MRPp26QTLxHNN84nr5fohcD2GNPmD8I3iAJKdU23nATkpu2D/84eLQbhVVvo2fNMhOrM2rqQfdc6/VvlBiKAYycCDUASxJUqm16cdHwO/nihnbofXtMLCppfMfT4sdzIwCZhMoS4boouw/rxYzd6bxOSX2MALhJtQiM4OXH/+dDaHFy+g1pQ0YAgpCsrfYycLU0MI56An5Pebr8hqKKMGMAblI9DMbnVWTEX0J4xMnptSZBxgCCsEzC2k5ERo/GJs2eScPMO9J5X/QIfLpPKAAjV4S/LuDWeNHx9GVhYIYGsGsapjbWqYNhmjDV9g3pabMO4pCpPtCFBjB8KNjWMwRaHaYRqZbBz6Y9/32pbnR9JAAC033TkdSD1q8ANYVt6ux6Lqh6/+YZws3PSp6RASgFZG21k4Fb4oBAwM8pT98apXfkAIZPjEnVAubnTR+byxfI3SBa7uR05DdfsQAoLSBjWx8Q00Ome4hgHGfiL9Oe/3SU33qkl8FqGsvajbczDz5KRHMZmDry32Kj4QdbbX0EHGLmLUT1n6a8vm3V+IepiXUCztZY8IYJA+q/m6gGvUP6RifMos/7BETVbBw+F2wC4liMiWcNgAm1saSpTcBY+jZN1lKbABNqY0lTm4Cx9G2arGXcT8C/zAmYUGN5SOAAAAAASUVORK5CYII=) no-repeat   8rpx/20rpx 40rpx;
+}
+
+.songlist-name {
+  font-size:30rpx;
+  color: teal;
+  line-height: 1.2;
+  padding: 4rpx 0 0 12rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.songlist-from {
+  font-size:26rpx;
+  line-height: 1.2;
+  padding: 4rpx 0 0 12rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

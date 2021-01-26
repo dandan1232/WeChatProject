@@ -1,0 +1,6 @@
+<!--components/songlist/songlist.wxml-->
+<view class="songlist-container">
+  <view class="songlist-id">{{songlist.id}}</view>
+  <view class="songlist-name">{{songlist.name}}</view>
+  <view class="songlist-from">{{songlist.from}}</view>
+</view>
