@@ -35,42 +35,43 @@ Page({
     {
       url:'http://p1.music.126.net/9Ayx-EeCnuLRWKTcIhGB6g==/109951165664742856.jpg?imageView&quality=89'
     }],
-    playlist:[{
-      "id":"1001",
-      "playCount":1.4641238e+06,
-      "name":"2021·心里装着鲜花银河星光和我爱的人",
-      "picUrl":"http://p1.music.126.net/O8LkkfC7PtV7TA4UP693XA==/109951164569667332.jpg?param=140y140"
-    },
-    {
-      "id":"1002",
-      "playCount":87656.4,
-      "name":"【翻/原】温柔不是我说 而是你觉得.",
-      "picUrl":"http://p1.music.126.net/PJylNWy_2-jI7LRgQ2Cm6w==/109951165649129522.jpg?param=140y140"
-    },
-    {
-      "id":"1003",
-      "playCount":1.785097e+06,
-      "name":"和林同学说晚安",
-      "picUrl":"http://p3.music.126.net/v_-wonc6yEl9UVa-aPNOSQ==/109951165350855516.jpg?param=140y140"
-    },
-    {
-      "id":"1004",
-      "playCount":475,
-      "name":"刘大壮/是你的垚/王泽科/王巨星/王小帅",
-      "picUrl":"https://p2.music.126.net/flrqQ9juQtMqqCQIpLMU7w==/109951163576714902.jpg?param=140y140"
-    },
-    {
-      "id":"1005",
-      "playCount":1.06749088e+08,
-      "name":"什么“游戏运营节奏”拿捏了",
-      "picUrl":"http://p4.music.126.net/8sdYwsOfLA_3ciiuVHo0rQ==/109951165498690725.jpg?param=140y140"
-    },
-    {
-      "id":"1006",
-      "playCount":1.5742008e+06,
-      "name":"你一定要在自己热爱的世界里闪闪发亮啊",
-      "picUrl":"http://p3.music.126.net/uesfHcJmZ23S3er_1mpeaw==/109951165621856219.jpg?param=140y140"
-    }],
+    playlist:[],
+    // playlist:[{
+    //   "id":"1001",
+    //   "playCount":1.4641238e+06,
+    //   "name":"2021·心里装着鲜花银河星光和我爱的人",
+    //   "picUrl":"http://p1.music.126.net/O8LkkfC7PtV7TA4UP693XA==/109951164569667332.jpg?param=140y140"
+    // },
+    // {
+    //   "id":"1002",
+    //   "playCount":87656.4,
+    //   "name":"【翻/原】温柔不是我说 而是你觉得.",
+    //   "picUrl":"http://p1.music.126.net/PJylNWy_2-jI7LRgQ2Cm6w==/109951165649129522.jpg?param=140y140"
+    // },
+    // {
+    //   "id":"1003",
+    //   "playCount":1.785097e+06,
+    //   "name":"和林同学说晚安",
+    //   "picUrl":"http://p3.music.126.net/v_-wonc6yEl9UVa-aPNOSQ==/109951165350855516.jpg?param=140y140"
+    // },
+    // {
+    //   "id":"1004",
+    //   "playCount":475,
+    //   "name":"刘大壮/是你的垚/王泽科/王巨星/王小帅",
+    //   "picUrl":"https://p2.music.126.net/flrqQ9juQtMqqCQIpLMU7w==/109951163576714902.jpg?param=140y140"
+    // },
+    // {
+    //   "id":"1005",
+    //   "playCount":1.06749088e+08,
+    //   "name":"什么“游戏运营节奏”拿捏了",
+    //   "picUrl":"http://p4.music.126.net/8sdYwsOfLA_3ciiuVHo0rQ==/109951165498690725.jpg?param=140y140"
+    // },
+    // {
+    //   "id":"1006",
+    //   "playCount":1.5742008e+06,
+    //   "name":"你一定要在自己热爱的世界里闪闪发亮啊",
+    //   "picUrl":"http://p3.music.126.net/uesfHcJmZ23S3er_1mpeaw==/109951165621856219.jpg?param=140y140"
+    // }],
     songlist:[{
       "id":"①",
       "name":"天外来物",
@@ -98,7 +99,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getPlaylist()
   },
 
   /**
@@ -146,7 +147,20 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function () {},
 
-  }
+  _getPlaylist(){
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.cloud.callFunction({
+      name:'playlist'
+    }).then((res)=> {
+      console.log(res)
+      this.setData({
+        playlist:res.result
+      })
+      wx.hideLoading()
+    })
+  },
 })
