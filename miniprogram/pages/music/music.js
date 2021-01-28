@@ -1,4 +1,6 @@
 // pages/music/music.js
+const MAX_LIMIT=15
+const db=wx.cloud.database()
 Page({
 
   /**
@@ -35,7 +37,7 @@ Page({
     {
       url:'http://p1.music.126.net/9Ayx-EeCnuLRWKTcIhGB6g==/109951165664742856.jpg?imageView&quality=89'
     }],
-    playlist:[],
+    playlist:[]
     // playlist:[{
     //   "id":"1001",
     //   "playCount":1.4641238e+06,
@@ -72,26 +74,26 @@ Page({
     //   "name":"你一定要在自己热爱的世界里闪闪发亮啊",
     //   "picUrl":"http://p3.music.126.net/uesfHcJmZ23S3er_1mpeaw==/109951165621856219.jpg?param=140y140"
     // }],
-    songlist:[{
-      "id":"①",
-      "name":"天外来物",
-      "from":"薛之谦-《天外来物》"
-    },
-    {
-      "id":"②",
-      "name":"迟迟",
-      "from":"薛之谦-《天外来物》"
-    },
-    {
-      "id":"③",
-      "name":"刚刚好",
-      "from":"薛之谦-《初学者》"
-    },
-    {
-      "id":"④",
-      "name":"认真的雪",
-      "from":"薛之谦-《未完成的歌》"
-    }]
+    // songlist:[{
+    //   "id":"①",
+    //   "name":"天外来物",
+    //   "from":"薛之谦-《天外来物》"
+    // },
+    // {
+    //   "id":"②",
+    //   "name":"迟迟",
+    //   "from":"薛之谦-《天外来物》"
+    // },
+    // {
+    //   "id":"③",
+    //   "name":"刚刚好",
+    //   "from":"薛之谦-《初学者》"
+    // },
+    // {
+    //   "id":"④",
+    //   "name":"认真的雪",
+    //   "from":"薛之谦-《未完成的歌》"
+    // }]
 
   },
 
@@ -134,14 +136,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      playlist:[]
+    })
+    this._getPlaylist()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this._getPlaylist()
   },
 
   /**
@@ -154,12 +159,18 @@ Page({
       title: '加载中',
     })
     wx.cloud.callFunction({
-      name:'playlist'
+      name:'music',
+      data:{
+        start:this.data.playlist.length,
+        count:MAX_LIMIT,
+        $url:'playlist',
+      }
     }).then((res)=> {
       console.log(res)
       this.setData({
-        playlist:res.result
+        playlist:this.data.playlist.concat(res.result.data)
       })
+      wx.stopPullDownRefresh()
       wx.hideLoading()
     })
   },
