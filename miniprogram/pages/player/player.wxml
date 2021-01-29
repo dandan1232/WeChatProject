@@ -1,2 +1,6 @@
-<!--pages/player/player.wxml-->
-<text>pages/player/player.wxml</text>
+<!-- 全屏毛玻璃效果 -->
+<view wx:if="{{picUrl}}" class="player-container" style="background:url({{picUrl}}) center/cover no-repeat">
+</view>
+<view class="player-mask"></view>
+
+<text class="iconfont icon-bofang"></text>
