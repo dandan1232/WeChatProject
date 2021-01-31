@@ -9,7 +9,21 @@
     <image class="player-img zhuan {{isPlaying?'zhuan':'ting'}}" src="{{picUrl}}"></image>
   </view>
 
-  <!-- 控制面板 -->
+  <!-- 进度条控制区域 -->
+  <view class="progressControl">
+    <text>00:00</text>
+    <!-- 总进度条 -->
+  <view class="barControl">
+<!-- 实时进度条 -->
+<view class="audio-currentTime-Bar">
+  <!-- 小圆球 -->
+  <view class="audio-circle"></view>
+</view>
+  </view>
+  <text>03:00</text>
+  </view>
+
+  <!-- 底部控制播放面板 -->
   <view class="control">
     <text class="iconfont icon-hanhan-01-01" bind:tap="onPrev"></text>
     <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}}" bind:tap="togglePlaying"></text>

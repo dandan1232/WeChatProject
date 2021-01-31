@@ -4,6 +4,7 @@
 </view>
 <!-- 遮罩层 -->
 <view class='detail-mask'></view>
+
   <!-- 歌单信息，左图右文 -->
   <view class='detail-info'>
     <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>

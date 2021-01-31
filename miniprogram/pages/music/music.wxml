@@ -12,10 +12,10 @@
     <x-playlist playlist="{{item}}"></x-playlist>
   </block>
 </view>
-
+<!-- 
 <text class="title">薛之谦专属歌单</text>
 <view>
   <block wx:for="{{songlist}}" wx:key="id">
     <lin-playlist songlist="{{item}}"></lin-playlist>
   </block>
-</view>
+</view> -->

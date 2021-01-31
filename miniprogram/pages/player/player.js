@@ -72,7 +72,7 @@ Page({
   },
   onPrev(){
     playingIndex--
-    if(playingIndex === 0){
+    if(playingIndex < 0){
       playingIndex = musiclist.length - 1
     }
     this._loadMusicDetail(musiclist[playingIndex].id)
