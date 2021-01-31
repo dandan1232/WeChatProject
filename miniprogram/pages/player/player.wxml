@@ -15,7 +15,7 @@
     <!-- 总进度条 -->
   <view class="barControl">
 <!-- 实时进度条 -->
-<view class="audio-currentTime-Bar" style="width:{{currentWidth + 'rpx'}}">
+<view class="audio-currentTime-Bar" style="width:20rpx">
   <!-- 小圆球 -->
   <view class="audio-circle"></view>
 </view>
@@ -29,5 +29,4 @@
     <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}}" bind:tap="togglePlaying"></text>
     <text class="iconfont icon-hanhan-01-011" bind:tap="onNext"></text>
   </view>
-
 </view>

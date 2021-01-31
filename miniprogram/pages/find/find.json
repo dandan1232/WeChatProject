@@ -1,3 +1,6 @@
 {
+  "usingComponents": {
+    "x-playlist":"/components/playlist/playlist"
+  },
   "navigationBarTitleText":"发现"
 }
