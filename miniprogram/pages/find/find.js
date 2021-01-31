@@ -1,13 +1,14 @@
-// pages/find/find.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cards:[
-      {},{},{},{},{}
-    ]
+    // cards:[
+    //   {},{},{},{},{}
+    // ]
+    placeholderContent:'', // placeholderd 的内容
   },
 
   /**

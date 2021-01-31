@@ -10,7 +10,7 @@
     "minified": true,
     "newFeature": true,
     "coverView": true,
-    "nodeModules": false,
+    "nodeModules": true,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -75,6 +75,11 @@
           "name": "player",
           "pathName": "pages/player/player",
           "query": "musicid=247187&index=0",
+          "scene": null
+        },
+        {
+          "name": "find",
+          "pathName": "pages/find/find",
           "scene": null
         }
       ]

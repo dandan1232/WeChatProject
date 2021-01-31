@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "x-playlist":"/components/playlist/playlist"
+    "x-playlist":"/components/playlist/playlist",
+    "s-navbar":"/components/navbar/navbar"
   },
-  "navigationBarTitleText":"音乐",
   "enablePullDownRefresh":true
 }

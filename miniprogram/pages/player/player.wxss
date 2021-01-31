@@ -111,6 +111,7 @@
   height: 80rpx;
   line-height: 80rpx;
   display: flex;
+  color: #fff;
   
 }
 
@@ -126,7 +127,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100rpx;
+  /* width: 100rpx; */
   z-index: 1;
   height: 4rpx;
   background: red;

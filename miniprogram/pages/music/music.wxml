@@ -12,6 +12,12 @@
     <x-playlist playlist="{{item}}"></x-playlist>
   </block>
 </view>
+
+<s-navbar>
+  <view slot="content"> 
+<image src="../../images/tab/back.png" slot="left" style="width:50rpx;height:50rpx"></image> 
+  音乐 </view>
+</s-navbar>
 <!-- 
 <text class="title">薛之谦专属歌单</text>
 <view>
