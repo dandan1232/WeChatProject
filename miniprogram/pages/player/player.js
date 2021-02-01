@@ -1,4 +1,3 @@
-const moment= require('moment')
 
 let musiclist = []
 //正在播放的歌曲index
