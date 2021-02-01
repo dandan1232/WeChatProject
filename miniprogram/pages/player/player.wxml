@@ -11,7 +11,7 @@
 
   <!-- 进度条控制区域 -->
   <view class="progress-bar">
-  <xu-progress-bar/>
+  <xu-progress-bar bind:musicEnd="onNext" />
     </view>
 
   <!-- 底部控制播放面板 -->

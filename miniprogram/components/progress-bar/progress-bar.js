@@ -18,8 +18,8 @@ Component({
    */
   data: {
     showTime: {
-      currentTime: '00:10',
-      totalTime: '03:00',
+      currentTime: '00:00',
+      totalTime: '00:00',
     },
     distance: 13.3,
     progress: 10,
@@ -27,6 +27,7 @@ Component({
   lifetimes: {
     ready() {
       this._bindBGMEvent()
+      this._getDistance()
     }
   },
 
@@ -34,6 +35,36 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    //滑动视图对象发生改变
+    onChange(event){
+      console.log(event)
+      //判定事件源（引起滑动变化的原因：有自身播放进度变化和拖动两种）
+    if(event.detail.source == 'touch'){
+      //根据当前位置计算出百分比
+      this.data.progress =event.detail.x /(movableAreaWidth -movableViewWidth)*100
+      this.data.distance=event.detail.x
+    }
+    },
+    onTouchEnd(){
+      const currentTimeFmt=this._timeFormat(Math.floor(backgroundAudioManager.currentTime))
+      this.setData({
+        progress:this.data.progress,
+        distance:this.data.distance,
+        ['showTime.currentTime']:currentTimeFmt.min+':'+currentTimeFmt.sec
+      })
+      //定位歌曲播放位置
+      backgroundAudioManager.seek(duration*this.data.progress/100)
+    },
+    _getDistance(){
+      const query=this.createSelectorQuery()
+      query.select(`.movable-area`).boundingClientRect()
+      query.select(`.movable-view`).boundingClientRect()
+      query.exec((rect)=>{
+        console.log(rect)
+        movableAreaWidth =rect[0].width
+        movableViewWidth =rect[1].width
+      })
+    },
     _bindBGMEvent() {
       backgroundAudioManager.onPlay(() => {
         console.log('onPlay')
@@ -62,12 +93,29 @@ Component({
           }, 1000)//设置延迟
         }
       })
+
       backgroundAudioManager.onTimeUpdate(() => {
         // console.log('onTimeUpdate')
         // console.log('backgroundAudioManager.currentTime')
+        const duration =backgroundAudioManager.duration
+        const currentTime=backgroundAudioManager.currentTime
+        const sec=currentTime.toString().split('.')[0]
+        console.log(sec)
+        if(sec !=currentSec){
+          console.log(currentTime)
+          const currentTimeFmt=this._timeFormat(currentTime)
+          this.setData({
+            distance:(movableAreaWidth-movableViewWidth)*currentTime/duration,
+            progress:currentTime/duration*100,
+            ['showTime.currentTime']:`${currentTimeFmt.min}:${currentTimeFmt.sec}`
+          }) 
+          currentSec =sec //设置一秒更新一次
+        }
       })
+
       backgroundAudioManager.onEnded(() => {
         console.log('onEnded')
+        this.triggerEvent('musicEnd')
       })
       backgroundAudioManager.onError((res) => {
         console.log('onError')
@@ -79,6 +127,7 @@ Component({
     _setTotalTime() {
       duration = backgroundAudioManager.duration
       const durationFmt = this._timeFormat(duration)
+      console.log(durationFmt)
       this.setData({
         ['showTime.totalTime']: `${durationFmt.min}:${durationFmt.sec}`
       })
