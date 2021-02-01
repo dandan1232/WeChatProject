@@ -14,9 +14,3 @@
   <!-- 使用歌曲列表组件 -->
   <x-musiclist musiclist="{{musiclist}}" />
   <x-musiclist musiclist="{{musiclist}}" />
-
-  <s-navbar>
-  <view slot="content"> 
-<image src="../../images/tab/back.png" slot="left" style="width:50rpx;height:50rpx"></image> 
-  音乐 </view>
-</s-navbar>

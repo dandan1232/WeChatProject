@@ -98,47 +98,16 @@
   font-size: 80rpx;
 }
 
-.icon-bofang, .icon-zanting{
+.icon-bofang, 
+.icon-zanting{
   font-size: 120rpx;
   margin: 0 50rpx;
 }
 
-.progressControl{
+.progress-bar{
+  width: 90%;
   position: absolute;
-  left: 30rpx;
-  bottom: 250rpx;
-  width: 690rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  display: flex;
-  color: #fff;
-  
-}
-
-.barControl{
-  position: relative;
-  width: 500rpx;
-  height: 5rpx;
-  background: rgba(0, 0, 0, 0.4);
-  margin: auto;
-}
-
-.audio-currentTime-Bar{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100rpx;
-  z-index: 1;
-  height: 4rpx;
-  background: red;
-}
-
-.audio-circle{
-  position: absolute;
-  right: -12rpx;
-  top: -4rpx;
-  width: 12rpx;
-  height: 12rpx;
-  border-radius: 50%;
-  background: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom:24%
 }
