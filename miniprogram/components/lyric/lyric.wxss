@@ -1,6 +1,27 @@
-.container{
+/* .container{
   position: absolute;
   top: 400rpx;
   left: 400rpx;
   color: #fff;
+} */
+
+.lyric-scroll{
+  margin-top: 190rpx;
+  width: 100%;
+  height: 50%;
+  color: #ccc;
+  font-size: 32rpx;
+}
+
+.lyric-panel{
+  position: relative;
+  top: 50%;
+}
+
+.lyric{
+  min-height: 64rpx;
+}
+
+.hightlight-lyric{
+  color: #d43c33;
 }

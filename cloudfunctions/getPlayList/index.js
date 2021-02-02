@@ -19,7 +19,8 @@ const playlistCollection = db.collection('playlist')
 const axios = require('axios')
 
 //定义接口地址，复制内网穿透后postman测试通过的接口地址
-const URL = 'https://lddwx.cn1.utools.club/top/playlist/highquality?before=1503639064232&limit=60'
+const URL = 'http://47.98.169.198:3000/top/playlist/highquality?before=1503639064232&limit=60'
+
 
 // 云函数入口函数
 exports.main = async (event, context) => {

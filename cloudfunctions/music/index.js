@@ -10,7 +10,7 @@ const TcbRouter = require('tcb-router')
 //引入axios
 const axios = require('axios')
 //定义基础URL
-const BASE_URL = 'https://lddwx.cn1.utools.club'
+const BASE_URL = 'http://47.98.169.198:3000'
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -46,6 +46,12 @@ exports.main = async (event, context) => {
     const res=await axios.get(`${BASE_URL}/song/url?id=${event.musicId}`)
     ctx.body=res.data
   })
+
+    //根据歌单id获取歌词
+    app.router('lyric',async(ctx,next)=>{
+      const res=await axios.get(`${BASE_URL}/lyric?id=${event.musicId}`)
+      ctx.body=res.data
+    })
 
   return app.serve()
 }
