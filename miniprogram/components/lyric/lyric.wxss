@@ -1,0 +1,6 @@
+.container{
+  position: absolute;
+  top: 400rpx;
+  left: 400rpx;
+  color: #fff;
+}

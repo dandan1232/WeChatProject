@@ -5,10 +5,12 @@
 
 <view class="player-info">
   <!-- 封面信息 -->
-  <view class="player-disc {{isPlaying?'playing':''}}">
+  <view class="player-disc {{isPlaying?'playing':''}}" hidden="{{isLyricShow}}" bind:tap="onLyricShow"> 
     <image class="player-img zhuan {{isPlaying?'zhuan':'ting'}}" src="{{picUrl}}"></image>
   </view>
 
+  <!-- 歌词 -->
+  <xu-lyric isLyricShow ="{{isLyricShow}}" lyric="{{lyric}}" bind:tap="onLyricShow"></xu-lyric>
   <!-- 进度条控制区域 -->
   <view class="progress-bar">
   <xu-progress-bar bind:musicEnd="onNext" />

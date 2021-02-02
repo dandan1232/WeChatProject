@@ -10,9 +10,10 @@ Page({
   data: {
     picUrl: '',
     isPlaying:false, //音乐是否播放
-    currentTime:'00:00', //实时时间
-    durationTime:'04:21', //总时长
-    currentWidth:0,//实时进度条的宽度
+    name:'',
+    singer:'',
+    isLyricShow:false,
+    lyric:'传给歌词组件的歌词',
   },
 
 
@@ -86,6 +87,11 @@ Page({
     }
     this.setData({
       isPlaying:!this.data.isPlaying
+    })
+  },
+  onLyricShow(){
+    this.setData({
+      isLyricShow:!this.data.isLyricShow
     })
   },
   onPrev(){
