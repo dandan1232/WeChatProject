@@ -1,5 +1,6 @@
 /* 顶部歌单信息容器，使用高斯模糊加上透明度 */
 .detail-container{
+  margin-top: 80rpx;
   height: 320rpx;
   filter: blur(40rpx);
   opacity: 0.4;
@@ -7,6 +8,7 @@
 
 /* 顶部歌单信息遮罩层，高度和背景图一致，z轴方向处于背景图下方，形成一种毛玻璃效果 */
 .detail-mask{
+  margin-top: 150rpx;
   position: absolute;
   width: 100%;
   height: 320rpx;
@@ -18,6 +20,7 @@
 
 /* 详情信息容器，flex布局，绝对定位在吸顶位置，垂直方向（次轴）居中，水平方向（主轴）左对齐 */
 .detail-info{
+  margin-top: 150rpx;
   display: flex;
   position: absolute;
   top: 0;
@@ -48,3 +51,19 @@
 page{
   background: #e1eec3;  /* fallback for old browsers */      background: -webkit-linear-gradient(to right, rgb(225, 238, 195), rgb(240, 80, 83));  /* Chrome 10-25, Safari 5.1-6 */      background: linear-gradient(to right, rgb(225, 238, 195), rgb(240, 80, 83)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */         
 }
+
+
+.control{
+  position: absolute;
+  bottom:70%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  background: rgba(243, 239, 239, 0.863);
+}
+
+.control .iconfont{
+  text-align: center;
+  color: blue;
+}
+

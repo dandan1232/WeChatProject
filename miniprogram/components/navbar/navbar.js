@@ -35,6 +35,7 @@ Component({
 
     wx.getSystemInfo({
       success: function success(res) {
+        console.log(res)
         //search方法找ios字段，如果没找到返回-1，找到了返回0，所以我们还要加上1，通过两次取反获取到boolean值
         var ios = !!(res.system.toLowerCase().search('ios') + 1);
         var statusBarHeight = res.statusBarHeight;

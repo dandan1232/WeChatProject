@@ -1,16 +1,30 @@
+<s-navbar>
+  <image src="../../images/tab/back.png"
+  slot="left" style="width:50rpx;height:50rpx" bindtap="tovoucher"></image>
+  <view slot="content"> 歌单列表 </view>
+</s-navbar>
+
 <!-- 判断是否有封面图，有就作为顶部view区域的背景图 -->
 <view wx:if="{{listInfo.coverImgUrl}}" class='detail-container'
   style='background:url({{listInfo.coverImgUrl}}) no-repeat top/cover'>
 </view>
+
 <!-- 遮罩层 -->
 <view class='detail-mask'></view>
 
-  <!-- 歌单信息，左图右文 -->
-  <view class='detail-info'>
-    <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
-    <view class='detail-name'>{{listInfo.name}}</view>
+<!-- 歌单信息，左图右文 -->
+<view class='detail-info'>
+  <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
+  <view class='detail-name'>{{listInfo.name}}</view>
+</view>
+
+<!-- 收藏分享评论等等 -->
+  <view class="control">
+    <text class="iconfont icon-shoucang" >收藏  ||</text>
+    <text class="iconfont icon-pinglun">评论  ||</text>
+    <text class="iconfont icon-fenxiang" >  分享</text>
   </view>
 
-  <!-- 使用歌曲列表组件 -->
-  <x-musiclist musiclist="{{musiclist}}" />
-  <x-musiclist musiclist="{{musiclist}}" />
+<!-- 使用歌曲列表组件 -->
+<x-musiclist musiclist="{{musiclist}}" />
+<x-musiclist musiclist="{{musiclist}}" />

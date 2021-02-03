@@ -5,14 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    user: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          user: res.userInfo
+        })
+      },
+    })
   },
 
   /**
@@ -61,6 +69,27 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+  },
 
-  }
+//获取用户歌单
+_getUserPlaylist(userId){
+  console.log('getUserPlaylist')
+  wx.cloud.callFunction({
+    name:'profile',
+    data:{
+      userId,
+      $url:'getUserPlaylist',
+    }
+  }).then((res)=>{
+    console.log(res.result.playlist)
+    this.setData({
+      playlist:res.result.playlist
+    })
+  })
+},
+
+  //返回上一级方法、转跳
+  tovoucher: function (options) {
+    wx.navigateBack()
+  },
 })

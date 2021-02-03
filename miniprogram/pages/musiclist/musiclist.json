@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "x-musiclist":"/components/musiclist/musiclist"
+    "x-musiclist":"/components/musiclist/musiclist",
+    "s-navbar":"/components/navbar/navbar"
   },
   "navigationBarTitleText":"歌曲"
 }

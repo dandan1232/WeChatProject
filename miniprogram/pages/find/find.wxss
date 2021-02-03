@@ -3,6 +3,7 @@
 }
 
 .header{
+  margin-top: 160rpx;
   display: flex;
   height: 60rpx;
   line-height: 60rpx;

@@ -1,158 +1,53 @@
-/**app.wxss**/
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-} 
-
-button {
-  background: initial;
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1612339411485'); /* IE9 */
+  src: url('iconfont.eot?t=1612339411485#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
+  url('iconfont.woff?t=1612339411485') format('woff'),
+  url('iconfont.ttf?t=1612339411485') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1612339411485#iconfont') format('svg'); /* iOS 4.1- */
 }
 
-button:focus{
-  outline: 0;
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-button::after{
-  border: none;
+.icon-fenlei:before {
+  content: "\e611";
 }
 
-
-page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.icon-pinglun:before {
+  content: "\e7f5";
 }
 
-.userinfo, .uploader, .tunnel {
-  margin-top: 40rpx;
-  height: 140rpx;
-  width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: none;
-  border-right: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: all 300ms ease;
+.icon-shoucang:before {
+  content: "\e60d";
 }
 
-.userinfo-avatar {
-  width: 100rpx;
-  height: 100rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  background-size: cover;
-  background-color: white;
+.icon-fenxiang:before {
+  content: "\e612";
 }
 
-.userinfo-avatar:after {
-  border: none;
+.icon-sousuo:before {
+  content: "\e61a";
 }
 
-.userinfo-nickname {
-  font-size: 32rpx;
-  color: #007aff;
-  background-color: white;
-  background-size: cover;
+.icon-zanting:before {
+  content: "\e7c7";
 }
 
-.userinfo-nickname::after {
-  border: none;
+.icon-bofang:before {
+  content: "\e615";
 }
 
-.uploader, .tunnel {
-  height: auto;
-  padding: 0 0 0 40rpx;
-  flex-direction: column;
-  align-items: flex-start;
-  box-sizing: border-box;
+.icon-hanhan-01-01:before {
+  content: "\e6bb";
 }
 
-.uploader-text, .tunnel-text {
-  width: 100%;
-  line-height: 52px;
-  font-size: 34rpx;
-  color: #007aff;
+.icon-hanhan-01-011:before {
+  content: "\e6bc";
 }
 
-.uploader-container {
-  width: 100%;
-  height: 400rpx;
-  padding: 20rpx 20rpx 20rpx 0;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.uploader-image {
-  width: 100%;
-  height: 360rpx;
-}
-
-.tunnel {
-  padding: 0 0 0 40rpx;
-}
-
-.tunnel-text {
-  position: relative;
-  color: #222;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.tunnel-text:first-child {
-  border-top: none;
-}
-
-.tunnel-switch {
-  position: absolute;
-  right: 20rpx;
-  top: -2rpx;
-}
-
-.disable {
-  color: #888;
-}
-
-.service {
-  position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
-  width: 140rpx;
-  height: 140rpx;
-  border-radius: 50%;
-  background: linear-gradient(#007aff, #0063ce);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.service-button {
-  position: absolute;
-  top: 40rpx;
-}
-
-.service:active {
-  box-shadow: none;
-}
-
-.request-text {
-  padding: 20rpx 0;
-  font-size: 24rpx;
-  line-height: 36rpx;
-  word-break: break-all;
-}
-
-@import "iconfont.wxss";

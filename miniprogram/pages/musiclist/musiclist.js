@@ -44,4 +44,9 @@ Page({
     //将本歌单的歌曲列表存入本地存储
     wx.setStorageSync('musiclist', this.data.musiclist)
   },
+  
+  //返回上一级方法、转跳
+  tovoucher: function (options) {
+    wx.navigateBack()
+  },
 })

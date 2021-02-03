@@ -1,2 +1,22 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<s-navbar>
+  <image src="../../images/tab/back.png"
+  slot="left" style="width:50rpx;height:50rpx"></image>
+  <view slot="content"> 我的 </view>
+</s-navbar>
+
+<!-- 判断是否有封面图，有就作为顶部view区域的背景图 -->
+<view class="user" style="background-image:url('https://pic-ldd-test.oss-cn-hangzhou.aliyuncs.com/md/20210203183202.png')">
+  <view class="user-image">
+    <image src="{{user.avatarUrl}}"></image>
+    </view>
+    <view class="nickname">{{user.nickName}}</view>
+  </view>
+
+<!-- 遮罩层 -->
+<view class='detail-mask'></view>
+
+<view class="playlist-container">
+  <block wx:for="{{getUserPlaylist}}" wx:key="_id">
+    <x-playlist playlist="{{item}}"></x-playlist>
+  </block>
+</view>

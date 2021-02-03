@@ -82,6 +82,12 @@
           "pathName": "pages/find/find",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "profile",
+          "pathName": "pages/profile/profile",
+          "query": "musicId=247187&index=0",
+          "scene": null
         }
       ]
     }

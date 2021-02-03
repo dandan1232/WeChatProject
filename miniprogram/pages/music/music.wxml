@@ -1,4 +1,16 @@
 <!--pages/music/music.wxml-->
+<s-navbar class="searchContainer">
+  <!-- <view slot="content"> 
+  </view> -->
+  <view class="header">
+    <text class="iconfont icon-fenlei fenleiIcon"></text>
+    <view class="searchInput">
+      <text class="iconfont icon-sousuo searchIcon"></text>
+<input type="text" placeholder="搜索歌曲"  placeholder-class="placeholder"/>
+  </view>
+  </view>
+</s-navbar>
+  
 <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000"
   class="swiper">
   <swiper-item wx:for="{{imgUrls}}">
@@ -13,11 +25,7 @@
   </block>
 </view>
 
-<!-- <s-navbar>
-  <view slot="content"> 
-<image src="../../images/tab/back.png" slot="left" style="width:50rpx;height:50rpx"></image> 
-  音乐 </view>
-</s-navbar> -->
+
 <!-- 
 <text class="title">薛之谦专属歌单</text>
 <view>
