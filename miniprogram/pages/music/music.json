@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "x-playlist":"/components/playlist/playlist"
+    "x-playlist":"/components/playlist/playlist",
+    "s-navbar":"/components/navbar/navbar"
   },
   "enablePullDownRefresh":true
 }

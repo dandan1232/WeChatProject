@@ -16,6 +16,7 @@
   top: 0;
   left: 0;
   z-index: -1;
+  border-radius: 0rpx 0rpx 50% 50% / 0rpx 0rpx 10rpx 10rpx !important;
 }
 
 /* 详情信息容器，flex布局，绝对定位在吸顶位置，垂直方向（次轴）居中，水平方向（主轴）左对齐 */
@@ -53,17 +54,27 @@ page{
 }
 
 
-.control{
-  position: absolute;
-  bottom:70%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  background: rgba(243, 239, 239, 0.863);
-}
 
-.control .iconfont{
+.iconfont{
   text-align: center;
   color: blue;
 }
 
+.operation{
+  display: flex;
+  position: absolute;
+  top:400rpx;
+  left: 60%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 50rpx;
+  align-items: center;
+}
+
+.operation view{
+  display: flex;
+  align-items: center;
+  margin: 0 20rpx 0 20rpx;
+  width: 150rpx;
+}

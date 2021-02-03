@@ -49,4 +49,33 @@ Page({
   tovoucher: function (options) {
     wx.navigateBack()
   },
+
+  onPageScroll(e) { //监听距离顶部的距离
+    const scrollTop = e.scrollTop
+    let opac = 1
+    if (scrollTop < 185) {
+      if (scrollTop < 100) {
+        opac = 1
+      }
+      else if (scrollTop < 120) {
+        opac = 0.8
+      } else if (scrollTop < 140) {
+        opac = 0.6
+      } else if (scrollTop < 160) {
+        opac = 0.4
+      } else if (scrollTop < 180) {
+        opac = 0.2
+      }
+      this.setData({
+        isTop: true,
+        navOpacity: opac
+      })
+    } else {
+      this.setData({
+        isTop: false,
+        navOpacity: 1
+      })
+    }
+  },
+
 })

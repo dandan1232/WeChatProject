@@ -1,7 +1,33 @@
+<!-- <s-navbar style="opacity:{{navOpacity}}">
+  <view slot="left">
+  <image src="../../images/tab/back.png"
+  slot="left" style="width:50rpx;height:50rpx" bind:tap="tovoucher" style="width:50rpx;height:50rpx"></image>
+</view>
+  <view slot="content"> 歌单列表 </view>
+  <view slot="bg">
+    <view class="detail-mask"></view>
+    <block wx:if="{{listInfo.coverImgUrl}}" class="detail-container" style="background:url({{listInfo:coverImgUrl}}) no-repeat top/cover">
+    </block>
+    <block wx:else>
+<text>{{listInfo.name}}</text>
+</block>
+  </view>
+</s-navbar> -->
+
+<!-- <s-navbar>
+  <view slot="content" style="diaplay:flex;flex-direction:colum;align-items:center;opacity:{{navOpacity}}"> 
+<block wx:if="{{listInfo.coverImgUrl}}" class="detail-container" style="background:url({{listInfo:coverImgUrl}}) no-repeat top/cover"><text>歌单列表</text>
+</block>
+<block>
+<text>{{listInfo.name}}</text>
+</block>
+  </view>
+</s-navbar> -->
+
 <s-navbar>
   <image src="../../images/tab/back.png"
-  slot="left" style="width:50rpx;height:50rpx" bindtap="tovoucher"></image>
-  <view slot="content"> 歌单列表 </view>
+  slot="left" style="width:50rpx;height:50rpx"></image>
+  <view slot="content"> 我的 </view>
 </s-navbar>
 
 <!-- 判断是否有封面图，有就作为顶部view区域的背景图 -->
@@ -19,10 +45,18 @@
 </view>
 
 <!-- 收藏分享评论等等 -->
-  <view class="control">
-    <text class="iconfont icon-shoucang" >收藏  ||</text>
-    <text class="iconfont icon-pinglun">评论  ||</text>
-    <text class="iconfont icon-fenxiang" >  分享</text>
+<view class="operation">
+    <view>
+    <text class="iconfont icon-shoucang" >收藏</text>
+  </view>
+  <text class="cut">|</text>
+  <view>
+    <text class="iconfont icon-pinglun">评论</text>
+  </view>
+  <text class="cut">|</text>
+  <view>
+    <text class="iconfont icon-fenxiang" >分享</text>
+  </view>
   </view>
 
 <!-- 使用歌曲列表组件 -->

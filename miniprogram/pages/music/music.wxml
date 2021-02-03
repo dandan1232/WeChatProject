@@ -1,13 +1,12 @@
-<!--pages/music/music.wxml-->
-<s-navbar class="searchContainer">
-  <!-- <view slot="content"> 
-  </view> -->
-  <view class="header">
-    <text class="iconfont icon-fenlei fenleiIcon"></text>
-    <view class="searchInput">
-      <text class="iconfont icon-sousuo searchIcon"></text>
-<input type="text" placeholder="搜索歌曲"  placeholder-class="placeholder"/>
-  </view>
+<s-navbar>
+  <view slot="content" style="diaplay:flex;flex-direction:colum;align-items:center;opacity:{{navOpacity}}"> 
+<block wx:if="{{isTop}}">
+      <text class="iconfont icon-sousuo" style="padding:10rpx"></text>
+     <input type="text" placeholder="      搜索歌曲" class="searchBar"/>
+</block>
+<block wx:else>
+<text>音乐</text>
+</block>
   </view>
 </s-navbar>
   

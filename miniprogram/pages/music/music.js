@@ -1,42 +1,42 @@
 // pages/music/music.js
-const MAX_LIMIT=15
-const db=wx.cloud.database()
+const MAX_LIMIT = 15
+const db = wx.cloud.database()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls:[{
-      url:'http://p1.music.126.net/pOXTFta-mhTpZOGhBBWvhQ==/109951165664682857.jpg?imageView&quality=89'
+    imgUrls: [{
+      url: 'http://p1.music.126.net/pOXTFta-mhTpZOGhBBWvhQ==/109951165664682857.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/C9I9GxpvRX7nCZyXNBeqOw==/109951165664694558.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/C9I9GxpvRX7nCZyXNBeqOw==/109951165664694558.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/q5rKcBx9Y0V37DsUSaQKXg==/109951165664695730.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/q5rKcBx9Y0V37DsUSaQKXg==/109951165664695730.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/WOoIZuva_umxxzYOvWINLA==/109951165664707565.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/WOoIZuva_umxxzYOvWINLA==/109951165664707565.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/zUv2mRobckK7Tdn2bp9iSA==/109951165664840470.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/zUv2mRobckK7Tdn2bp9iSA==/109951165664840470.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/UdSM2BmqY_h_t9HAOzb5dQ==/109951165664710664.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/UdSM2BmqY_h_t9HAOzb5dQ==/109951165664710664.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/Z90NF2dHuBYrV6x-U9jJJQ==/109951165664719544.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/Z90NF2dHuBYrV6x-U9jJJQ==/109951165664719544.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/vAjwukVm-H0LOqzy4FTJXA==/109951165664851877.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/vAjwukVm-H0LOqzy4FTJXA==/109951165664851877.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/j0gp3gBDRRoqIXxAs0v7oA==/109951165664720877.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/j0gp3gBDRRoqIXxAs0v7oA==/109951165664720877.jpg?imageView&quality=89'
     },
     {
-      url:'http://p1.music.126.net/9Ayx-EeCnuLRWKTcIhGB6g==/109951165664742856.jpg?imageView&quality=89'
+      url: 'http://p1.music.126.net/9Ayx-EeCnuLRWKTcIhGB6g==/109951165664742856.jpg?imageView&quality=89'
     }],
-    playlist:[]
+    playlist: []
     // playlist:[{
     //   "id":"1001",
     //   "playCount":1.4641238e+06,
@@ -101,6 +101,7 @@ Page({
    */
   onLoad: function (options) {
     this._getPlaylist()
+
   },
 
   /**
@@ -136,7 +137,7 @@ Page({
    */
   onPullDownRefresh: function () {
     this.setData({
-      playlist:[]
+      playlist: []
     })
     this._getPlaylist()
   },
@@ -151,26 +152,54 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {},
+  onShareAppMessage: function () { },
 
-  _getPlaylist(){
+  _getPlaylist() {
     wx.showLoading({
       title: '加载中',
     })
     wx.cloud.callFunction({
-      name:'music',
-      data:{
-        start:this.data.playlist.length,
-        count:MAX_LIMIT,
-        $url:'playlist',
+      name: 'music',
+      data: {
+        start: this.data.playlist.length,
+        count: MAX_LIMIT,
+        $url: 'playlist',
       }
-    }).then((res)=> {
+    }).then((res) => {
       console.log(res)
       this.setData({
-        playlist:this.data.playlist.concat(res.result.data)
+        playlist: this.data.playlist.concat(res.result.data)
       })
       wx.stopPullDownRefresh()
       wx.hideLoading()
     })
   },
-})
+  onPageScroll(e) { //监听距离顶部的距离
+    const scrollTop = e.scrollTop
+    let opac = 1
+    if (scrollTop < 185) {
+      if (scrollTop < 100) {
+        opac = 1
+      }
+      else if (scrollTop < 120) {
+        opac = 0.8
+      } else if (scrollTop < 140) {
+        opac = 0.6
+      } else if (scrollTop < 160) {
+        opac = 0.4
+      } else if (scrollTop < 180) {
+        opac = 0.2
+      }
+      this.setData({
+        isTop: true,
+        navOpacity: opac
+      })
+    } else {
+      this.setData({
+        isTop: false,
+        navOpacity: 1
+      })
+    }
+  },
+
+  })
