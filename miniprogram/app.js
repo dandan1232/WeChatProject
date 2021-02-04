@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     // console.log('onLaunch 执行')
     // console.log(options)
     if (!wx.cloud) {
@@ -12,11 +12,32 @@ App({
          traceUser: true,
       })
     }
-    this.globalData = {}
+    this.globalData = {
+      sysInfo:this.getSysInfo(),
+    }
+  },
+
+  getSysInfo:function(){
+    //获得系统信息
+    let systemInfo =wx.getSystemInfoSync()
+    //计算px转换到rpx的比列
+    let pxToRpxScale =750/systemInfo.windowWidth;
+    //状态栏的高度px
+    let statusBarHeight =systemInfo.statusBarHeight
+    ////////
+    //胶囊按钮信息
+    let rect=wx.getMenuButtonBoundingClientRect()
+    const sysInFo={
+      pxToRpxScale,
+      statusBarHeight,
+      rect
+    }
+    return sysInFo
   },
   
   onShow(options){
     console.log('onShow 执行')
     console.log(options)
   }
+
 })

@@ -1,4 +1,4 @@
-// pages/musiclist/musiclist.js
+const app=getApp()
 Page({
 
   /**
@@ -9,6 +9,9 @@ Page({
     musiclist: [],
     //歌单信息（只获取了封面图和歌单名称）
     listInfo: {},
+    opacity:0,
+    title:'歌单',
+    statusBarHeight:0,
   },
 
   /**
@@ -16,6 +19,9 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    this.setData({
+      statusBarHeight:app.globalData.sysInfo.statusBarHeight,
+    })
     wx.showLoading({
       title: '加载中',
     })
@@ -27,55 +33,52 @@ Page({
       }
     }).then((res) => {
       console.log(res)
-      console.log(res.result)
+      // console.log(res.result)
       const pl = res.result.playlist
       this.setData({
         musiclist: pl.tracks,
         listInfo: {
           coverImgUrl: pl.coverImgUrl,
           name: pl.name,
+          coverImgUrl:pl.coverImgUrl,
+          name:pl.name,
+          avatarUrl:pl.creator.avatarUrl,
+          nickname:pl.creator.nickname,
+          subscribedCount:pl.subscribedCount,
+          commentCount:pl.commentCount,
+          shareCount:pl.shareCount,
+          description:pl.description,
         }
       })
+      console.log(this.data.listInfo)
       this._setMusiclist()
       wx.hideLoading()
+    })
+  },
+  onPageScroll(e){
+    let scrollTop =e.scrollTop
+    console.log(scrollTop)
+    if(scrollTop>44){
+      this.setData({
+        title:this.data.listInfo.name,
+      })
+    }else{
+      this.setData({
+        title:'歌单',
+      })
+    }
+    let _opacity =(scrollTop/100>1)?1:scrollTop/100
+    this.setData({
+      opacity:_opacity
     })
   },
   _setMusiclist() {
     //将本歌单的歌曲列表存入本地存储
     wx.setStorageSync('musiclist', this.data.musiclist)
   },
-  
-  //返回上一级方法、转跳
-  tovoucher: function (options) {
-    wx.navigateBack()
-  },
-
-  onPageScroll(e) { //监听距离顶部的距离
-    const scrollTop = e.scrollTop
-    let opac = 1
-    if (scrollTop < 185) {
-      if (scrollTop < 100) {
-        opac = 1
-      }
-      else if (scrollTop < 120) {
-        opac = 0.8
-      } else if (scrollTop < 140) {
-        opac = 0.6
-      } else if (scrollTop < 160) {
-        opac = 0.4
-      } else if (scrollTop < 180) {
-        opac = 0.2
-      }
-      this.setData({
-        isTop: true,
-        navOpacity: opac
-      })
-    } else {
-      this.setData({
-        isTop: false,
-        navOpacity: 1
-      })
-    }
-  },
-
+  back(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  }
 })

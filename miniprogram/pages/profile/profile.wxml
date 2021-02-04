@@ -20,3 +20,50 @@
     <x-playlist playlist="{{item}}"></x-playlist>
   </block>
 </view>
+
+
+<view class="hr"></view>
+<view class='item'>
+  <view class="title">支付</view>
+  <view class="detail2">
+    <text>></text>
+  </view>
+</view>
+<view class="line"></view>
+
+<view class='item'>
+  <view class="title">收藏</view>
+  <view class="detail2">
+    <text>></text>
+  </view>
+</view>
+
+<view class="hr"></view>
+<view class='item'>
+  <view class="title">朋友圈</view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="item">
+  <view class="title">卡包</view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="item">
+  <view class="title">表情</view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="item">
+  <view class="title">设置</view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="hr"></view>

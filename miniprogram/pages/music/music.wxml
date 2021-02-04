@@ -1,28 +1,33 @@
-<s-navbar>
-  <view slot="content" style="diaplay:flex;flex-direction:colum;align-items:center;opacity:{{navOpacity}}"> 
-<block wx:if="{{isTop}}">
-      <text class="iconfont icon-sousuo" style="padding:10rpx"></text>
-     <input type="text" placeholder="      搜索歌曲" class="searchBar"/>
-</block>
-<block wx:else>
-<text>音乐</text>
-</block>
-  </view>
-</s-navbar>
-  
-<swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000"
-  class="swiper">
-  <swiper-item wx:for="{{imgUrls}}">
-    <image src="{{item.url}}" class="img" mode="scaleToFill"></image>
-  </swiper-item>
-</swiper>
-
-<text class="title">场景歌单</text>
-<view class="playlist-container">
-  <block wx:for="{{playlist}}" wx:key="_id">
-    <x-playlist playlist="{{item}}"></x-playlist>
-  </block>
+<!-- 默认导航 -->
+<view class="header" style="padding-top:{{statusBarHeight + 10}}px;opacity:{{1-opacity}}">
+  <input type="text" class="search-input" placeholder="{{placeholder}}" />
 </view>
+<!-- 切换导航 -->
+<view class="header" style="padding-top:{{statusBarHeight+10}}px;opacity:{{opacity}}">
+  <view class="nav-title" >     和林同学说晚安</view>
+</view>
+
+<!-- 滚动区域 -->
+<scroll-view scroll-y style="padding-top:{{statusBarHeight +54}}px">
+
+  <!-- 轮播 -->
+  <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000"
+    circular="true" class="swiper" style="margin-top:{{barHeight+44+8}}px;">
+    <block wx:for="{{imgUrls}}" wx:key="url">
+      <swiper-item>
+        <image src="{{item.url}}" class="img" mode="scaleToFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 歌单列表 -->
+  <!-- <text class="title">场景歌单</text> -->
+  <view class="playlist-container">
+    <block wx:for="{{playlist}}" wx:key="_id">
+      <x-playlist playlist="{{item}}"></x-playlist>
+    </block>
+  </view>
+</scroll-view>
 
 
 <!-- 

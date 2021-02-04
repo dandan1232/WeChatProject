@@ -21,36 +21,32 @@
   display: flex;
 }
 
-.lin-title{
-  margin-left: 20rpx;
-}
-
-.songlist-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 10rpx;
-}
-
-page{
-  background: #e1eec3;  /* fallback for old browsers */      background: -webkit-linear-gradient(to right, rgb(225, 238, 195), rgb(240, 80, 83));  /* Chrome 10-25, Safari 5.1-6 */      background: linear-gradient(to right, rgb(225, 238, 195), rgb(240, 80, 83)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */         
-}
-
-.icon-sousuo{
-  position: absolute;
-  left: 240rpx;
-}
-
-
 .placeholder{
   color:black;
   font-size: 28rpx;
 }
 
-.searchBar{
+.search-input{
   background-color:#fff;
-  border-radius: 20rpx;
+  position: relative;
+  border-radius: 300rpx;
+  left: 150rpx;
+  width: 50%;
+}
+
+/* 顶部导航，随着滚动出现 */
+.header{
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 100%;
+  z-index: 999;
+  padding-bottom: 10rpx;
+}
+
+.nav-title{
+  position: relative;
+  width: 50%;
+  background-color: hotpink;
+  border-radius: 300rpx;
+  left: 200rpx;
 }

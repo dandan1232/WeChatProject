@@ -1,6 +1,7 @@
 // pages/music/music.js
 const MAX_LIMIT = 15
-const db = wx.cloud.database()
+// const db = wx.cloud.database()
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -36,7 +37,11 @@ Page({
     {
       url: 'http://p1.music.126.net/9Ayx-EeCnuLRWKTcIhGB6g==/109951165664742856.jpg?imageView&quality=89'
     }],
-    playlist: []
+    placeholder: '         搜索歌曲',
+    // imgUrls: [],
+    playlist: [],
+    statusBarHeight: 0,
+    opacity: 0,
     // playlist:[{
     //   "id":"1001",
     //   "playCount":1.4641238e+06,
@@ -99,9 +104,28 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this._getPlaylist()
+  // onLoad: function (options) {
+  //   this._getPlaylist()
 
+  // },
+  onLoad() {
+    let rect = app.globalData.sysInfo.rect
+    console.log(JSON.stringify(rect))
+    this.setData({
+      statusBarHeight: app.globalData.sysInfo.statusBarHeight,
+    })
+    console.log(this.data.statusBarHeight)
+    this._getPlaylist()
+    this._getSwiper
+  },
+  onPageScroll(e) {
+    let scrollTop = e.scrollTop
+    // console.log(scrollTop)
+    let _opacity = (scrollTop / 100 > 1) ? 1 : scrollTop / 100
+    // console.log(_opacity)
+    this.setData({
+      opacity: _opacity
+    })
   },
 
   /**
@@ -140,6 +164,7 @@ Page({
       playlist: []
     })
     this._getPlaylist()
+    this._getSwiper()
   },
 
   /**
@@ -174,32 +199,4 @@ Page({
       wx.hideLoading()
     })
   },
-  onPageScroll(e) { //监听距离顶部的距离
-    const scrollTop = e.scrollTop
-    let opac = 1
-    if (scrollTop < 185) {
-      if (scrollTop < 100) {
-        opac = 1
-      }
-      else if (scrollTop < 120) {
-        opac = 0.8
-      } else if (scrollTop < 140) {
-        opac = 0.6
-      } else if (scrollTop < 160) {
-        opac = 0.4
-      } else if (scrollTop < 180) {
-        opac = 0.2
-      }
-      this.setData({
-        isTop: true,
-        navOpacity: opac
-      })
-    } else {
-      this.setData({
-        isTop: false,
-        navOpacity: 1
-      })
-    }
-  },
-
-  })
+})
