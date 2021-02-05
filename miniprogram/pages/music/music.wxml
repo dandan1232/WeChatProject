@@ -1,11 +1,21 @@
+<!-- 自定义导航组件 -->
+<!-- <view style="padding-top:{{40+44}}px" class="header">
+  <navigation showIcon='{{false}}' title='{{nickname}}'></navigation>
+</view> -->
+
 <!-- 默认导航 -->
-<view class="header" style="padding-top:{{statusBarHeight + 10}}px;opacity:{{1-opacity}}">
+<view class="header" style="padding-top:{{statusBarHeight+ 12}}px;opacity:{{1-opacity}};padding-bottom: 23px;">
   <input type="text" class="search-input" placeholder="{{placeholder}}" />
 </view>
 <!-- 切换导航 -->
-<view class="header" style="padding-top:{{statusBarHeight+10}}px;opacity:{{opacity}}">
-  <view class="nav-title" >     和林同学说晚安</view>
+<view class="header" style="padding-top:{{statusBarHeight+12}}px;opacity:{{opacity}};padding-bottom: 23px;">
+  <view class="nav-title">和林同学说晚安</view>
 </view>
+
+<!-- 粘性吸顶，引入搜索组件 -->
+<!-- <view class="search-container" style="top:{{statusBarHeight +44}}px;">
+  <x-search inconfont="iconfont" icon-sousuo="icon-sousuo" bind:search="onSearch" />
+</view> -->
 
 <!-- 滚动区域 -->
 <scroll-view scroll-y style="padding-top:{{statusBarHeight +54}}px">

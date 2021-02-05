@@ -12,12 +12,14 @@
     "audio"
   ],
   "window": {
+    "navigationBarBackgroundColor": "#624677",
+    "navigationBarTitleText": "和林同学说晚安",
     "navigationStyle": "custom",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#474747",
-    "selectedColor": "d43c43",
+    "selectedColor": "#d43c43",
     "list": [
       {
         "pagePath": "pages/music/music",
@@ -38,6 +40,9 @@
         "selectedIconPath": "images/tab/profile-actived.png"
       }
     ]
+  },
+  "usingComponents": {
+    "navigation":"/components/navigation/navigation"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

@@ -3,37 +3,27 @@
 }
 
 .header{
-  margin-top: 160rpx;
   display: flex;
   height: 60rpx;
   line-height: 60rpx;
   padding:10rpx 0;
 }
 
-.searchInput{
-  flex: 1;
-  background: rgba(237, 237, 237, 0.3);
-  border-radius: 30rpx;
+.left{
+  font-size: 100rpx;
+  margin: 0 20rpx;
+}
+.right{
+  margin:0 10rpx;
+  font-size: 50rpx;
 }
 
-.cancel{
-  width: 100rpx;
-  text-align: center;
-}
-
-.searchIcon{
+.icon-fabu{
   position: absolute;
-  left: 15rpx;
-}
-
-.searchInput input{
-  margin-left:50rpx;
-  height: 60rpx;
-}
-
-.placeholder{
-  color: cornflowerblue;
-  font-size: 28rpx;
+  left: 5rpx;
+  font-size: 40rpx;
+  color: white;
+  z-index: 1003;
 }
 
 /* 热搜榜的样式 */
@@ -59,6 +49,3 @@
   margin: 0 10rpx;
 }
 
-page{
-  background: #e1eec3;  /* fallback for old browsers */      background: -webkit-linear-gradient(to right, rgb(225, 238, 195), rgb(240, 80, 83));  /* Chrome 10-25, Safari 5.1-6 */      background: linear-gradient(to right, rgb(225, 238, 195), rgb(240, 80, 83)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */         
-}

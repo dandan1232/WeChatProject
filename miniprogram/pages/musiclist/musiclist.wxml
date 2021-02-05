@@ -38,13 +38,13 @@
 <x-musiclist musiclist="{{musiclist}}" /> -->
 
 <!-- 默认导航 -->
-<view class="header" style="padding-top:{{statusBarHeight+44}}px;opacity:{{1-opacity}};">
+<view class="header" style="padding-top:{{statusBarHeight+54}}px;opacity:{{1-opacity}};">
   <text class="iconfont icon-fanhui" bind:tap="back"></text>
   <text class="title">{{title}}</text>
 </view>
 
 <!-- 导航切换 -->
-<view class="header" style="padding-top:{{statusBarHeight+44}}px;opacity:{{opacity}};">
+<view class="header" style="padding-top:{{statusBarHeight+54}}px;opacity:{{opacity}};">
   <view wx:if="{{listInfo.coverImgUrl}}" class='blur-bg' style='background:url({{listInfo.coverImgUrl}}) no-repeat center/cover; z-index:11'>
   </view>
   <view class="mask" style="z-index:10"></view>

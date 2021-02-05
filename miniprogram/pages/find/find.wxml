@@ -1,19 +1,17 @@
-<!--pages/find/find.wxml-->
-<!-- <text>发现</text>
-<view>
-  <block wx:for="{{cards}}">
-    <my-card></my-card>
-  </block>
-</view> -->
-<view class="searchContainer">
-  <!-- 头部搜索区域 -->
-  <view class="header">
-    <view class="searchInput">
-      <text class="iconfont icon-sousuo searchIcon"></text>
-<input type="text" placeholder="搜索歌曲"  placeholder-class="placeholder"/>
+<!-- 自定义导航 -->
+<navigation showIcon='{{false}}' title='发现'></navigation>
+
+<!-- 顶部搜索区域 -->
+<view class="header">
+  <view class="left" bind:tap="onPublish">
+    <!-- 左侧的发布图标 -->
+    <i class="iconfont icon-fabu"></i>
   </view>
-  <text class="cancel">取消</text>
+  <view class="right">
+    <!-- 引入搜索组件，接受子组件回传的search方法 -->
+    <x-search bind:search="onSearch"/>
   </view>
+</view>
 
 <!-- 热搜榜 -->
 <view class="hotContainer">
@@ -46,7 +44,4 @@
     </view>
   </view>
 </view>
-</view>
-
-
 

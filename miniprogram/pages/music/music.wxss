@@ -36,17 +36,17 @@
 
 /* 顶部导航，随着滚动出现 */
 .header{
+
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
   padding-bottom: 10rpx;
+  background-color: gray;
 }
 
 .nav-title{
-  position: relative;
+  position: absolute;
+  left: 280rpx;
   width: 50%;
-  background-color: hotpink;
-  border-radius: 300rpx;
-  left: 200rpx;
 }
