@@ -26,26 +26,10 @@
   z-index: 1003;
 }
 
-/* 热搜榜的样式 */
-.hotContainer .title{
-  font-size: 28rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  border-bottom: 1rpx solid #eee;
-}
 
-.hotList{
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.hotItem{
-  width: 50%;
-  height: 80rpx;
-  line-height: 80rpx;
-  font-size: 26rpx;
+.container{
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  height: 100vh;
 }
-.hotItem .order{
-  margin: 0 10rpx;
-}
-

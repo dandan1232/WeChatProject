@@ -13,35 +13,9 @@
   </view>
 </view>
 
-<!-- 热搜榜 -->
-<view class="hotContainer">
-  <view class="title">热搜榜</view>
-  <!-- 热搜列表 -->
-  <view class="hotList">
-    <view class="hotItem">
-      <text class="order">1</text>
-      <text class="order">小尖尖</text>
-    </view>
-    <view class="hotItem">
-      <text class="order">2</text>
-      <text class="order">纸船</text>
-    </view>
-    <view class="hotItem">
-      <text class="order">3</text>
-      <text class="order">迟迟</text>
-    </view>
-    <view class="hotItem">
-      <text class="order">4</text>
-      <text class="order">潘金莲</text>
-    </view>
-    <view class="hotItem">
-      <text class="order">5</text>
-      <text class="order">耗尽</text>
-    </view>
-    <view class="hotItem">
-      <text class="order">6</text>
-      <text class="order">彩券</text>
-    </view>
-  </view>
-</view>
-
+<scroll-view class="container" scroll-y>
+<!-- 底部弹出层 -->
+<x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
+bind:loginfail="onLoginFail">
+</x-login>
+</scroll-view>
