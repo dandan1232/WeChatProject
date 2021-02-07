@@ -88,6 +88,11 @@
           "pathName": "pages/profile/profile",
           "query": "musicId=247187&index=0",
           "scene": null
+        },
+        {
+          "name": "publish",
+          "pathName": "pages/publish/publish",
+          "scene": null
         }
       ]
     }
