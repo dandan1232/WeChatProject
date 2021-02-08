@@ -7,7 +7,6 @@
     "pages/player/player",
     "pages/test/test",
     "pages/publish/publish"
-
   ],
   "requiredBackgroundModes": [
     "audio"
@@ -43,7 +42,7 @@
     ]
   },
   "usingComponents": {
-    "navigation":"/components/navigation/navigation"
+    "navigation": "/components/navigation/navigation"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

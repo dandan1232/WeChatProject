@@ -1,0 +1,64 @@
+//引入全局scss
+@import "D:\\WeChatProjects\\cloud-music\\miniprogram\\global.scss";
+
+//外部容器
+.blog {
+  padding: $gap;
+  background-color: $bgColor;
+}
+
+//头部
+.blog-header {
+  display: flex;
+  align-items: center;
+}
+
+.blog-avatar {
+  width: $imgSm;
+  height: $imgSm;
+  border-radius: 50%;
+  margin-right: $gap;
+}
+
+.blog-box {
+  flex: 1;
+}
+
+.blog-nickName {
+  font-size: $primarySize;
+  color: $primaryColor;
+}
+
+.blog-time {
+  font-size: $secondarySize;
+  color: $secondaryColor;
+}
+
+//博客内容
+.blog-content {
+  margin: $gap 0;
+  color: $primaryColor;
+  font-size: $primarySize;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+//博客照片
+.blog-img {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  .img {
+    flex: 1;
+    width: $imgLg;
+    height: $imgLg;
+    margin-right: $gap/2;
+    margin-bottom: $gap/2;
+  }
+
+  .img:nth-child(3n) {
+    margin-right: 0;
+  }
+}

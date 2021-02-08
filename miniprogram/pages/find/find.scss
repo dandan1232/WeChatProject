@@ -1,3 +1,5 @@
+@import 'D:\\WeChatProjects\\cloud-music\\miniprogram\\global.scss';
+
 .header {
   position: fixed;
   left: 0;
@@ -6,35 +8,40 @@
   display: flex;
   align-items: center;
   z-index: 99;
-  background-color: #fff;
+  background-color: $bgColor;
   box-sizing: border-box;
-  padding-left: 20rpx;
-  padding-right: 20rpx;
+  padding-left: $gap;
+  padding-right: $gap;
 }
 
+//发布图标容器
 .publish-container {
-  width: 64rpx;
-  height: 64rpx;
+  width: $imgSm;
+  height: $imgSm;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  //发布图标
+  .icon-fabu {
+    font-size: 48rpx;
+    color: $primaryColor;
+  }
 }
 
-.publish-container .icon-fabu {
-  font-size: 48rpx;
-  color: #4B4B4B;
-}
-
+//搜索组件容器
 .search-container {
   flex: 1;
 }
 
+//博客列表容器
 .container {
   box-sizing: border-box;
-  padding: 20rpx;
+  padding: $gap;
   margin-top: 80rpx;
 }
 
+//博客卡片容器
 .blog-panel {
   margin-bottom: 20rpx;
   box-sizing: border-box;
