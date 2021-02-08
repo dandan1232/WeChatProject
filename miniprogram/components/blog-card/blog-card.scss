@@ -3,6 +3,7 @@
 
 //外部容器
 .blog {
+  width: 100%;
   padding: $gap;
   background-color: $bgColor;
 }
@@ -43,22 +44,27 @@
   line-height: 1.5;
 }
 
-//博客照片
-.blog-img {
-  width: 100%;
+//图片容器
+.image-list {
   display: flex;
   flex-wrap: wrap;
-  box-sizing: border-box;
+  margin-top: $gap;
 
-  .img {
-    flex: 1;
+  //单张图片容器
+  .image-wrap {
     width: $imgLg;
     height: $imgLg;
     margin-right: $gap/2;
     margin-bottom: $gap/2;
-  }
 
-  .img:nth-child(3n) {
-    margin-right: 0;
+    //显示的图片
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+
+    .image:nth-child(3n) {
+      margin-right: 0;
+    }
   }
 }

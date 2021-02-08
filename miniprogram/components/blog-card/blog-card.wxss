@@ -1,4 +1,9 @@
+page {
+  background-color: #EDEDED;
+}
+
 .blog {
+  width: 100%;
   padding: 20rpx;
   background-color: #fff;
 }
@@ -37,21 +42,24 @@
   line-height: 1.5;
 }
 
-.blog-img {
-  width: 100%;
+.image-list {
   display: flex;
   flex-wrap: wrap;
-  box-sizing: border-box;
+  margin-top: 20rpx;
 }
 
-.blog-img .img {
-  flex: 1;
+.image-list .image-wrap {
   width: 230rpx;
   height: 230rpx;
   margin-right: 10rpx;
   margin-bottom: 10rpx;
 }
 
-.blog-img .img:nth-child(3n) {
+.image-list .image-wrap .image {
+  width: 100%;
+  height: 100%;
+}
+
+.image-list .image-wrap .image:nth-child(3n) {
   margin-right: 0;
 }

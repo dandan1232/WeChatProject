@@ -1,3 +1,7 @@
+page {
+  background-color: #EDEDED;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -30,12 +34,10 @@
 }
 
 .container {
-  box-sizing: border-box;
-  padding: 20rpx;
-  margin-top: 80rpx;
+  margin-top: 90rpx;
+  padding: 10rpx 10rpx 10rpx 0;
 }
 
 .blog-panel {
   margin-bottom: 20rpx;
-  box-sizing: border-box;
 }

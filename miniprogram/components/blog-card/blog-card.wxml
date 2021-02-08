@@ -10,15 +10,18 @@
     </view>
   </view>
 
+
   <!-- 博客文字内容 -->
   <view class="blog-content">
     <text>{{blog.content}}</text>
   </view>
   <!-- 博客图片，注意catch和bind的区别 -->
-  <view class="blog-img">
+  <view class="image-list">
     <block wx:for="{{blog.imgs}}" wx:key="index">
-      <image class="img" src="{{item}}" mode="aspectFill" catch:tap="onPreviewImage" data-imgsrc="{{item}}"
-        data-imgs="{{blog.imgs}}" />
+      <view class="image-wrap">
+        <image class="image" src="{{item}}" mode="aspectFill" catch:tap="onPreviewImage" data-imgsrc="{{item}}"
+          data-imgs="{{blog.imgs}}" />
+      </view>
     </block>
   </view>
 </view>

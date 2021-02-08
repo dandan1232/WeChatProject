@@ -36,13 +36,11 @@
 
 //博客列表容器
 .container {
-  box-sizing: border-box;
-  padding: $gap;
-  margin-top: 80rpx;
+  margin-top: 90rpx;
+  padding: $gap/2 $gap/2 $gap/2 0;
 }
 
 //博客卡片容器
 .blog-panel {
-  margin-bottom: 20rpx;
-  box-sizing: border-box;
+  margin-bottom: $gap;
 }
