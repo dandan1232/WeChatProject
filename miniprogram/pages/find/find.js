@@ -7,8 +7,13 @@ Page({
     blogList: [],
   },
   onSearch(event) {
+    console.log(event.detail.keyword)
+    this.setData({
+      blogList:[]
+    })
     keyword = event.detail.keyword
-    console.log(keyword)
+    // console.log(keyword)
+    this._loadBlogList(0)
   },
   onLoad(options) {
     this._loadBlogList()
@@ -63,6 +68,7 @@ Page({
     wx.cloud.callFunction({
       name: 'blog',
       data: {
+        keyword,
         start,
         count: 10,
         $url: 'list',

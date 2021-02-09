@@ -9,7 +9,7 @@
   </view>
   <view class="search-container">
     <!-- 引入搜索组件，接受子组件回传的search方法 -->
-    <x-search />
+    <x-search bind:search="onSearch" />
   </view>
 </view>
 
