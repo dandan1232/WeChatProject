@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    blog:{ }, //博客对象
+    blog:{}, //博客对象
     commentList:[], //博客的评论列表
     blogId:'', //博客id
     statusBarHeight:app.globalData.sysInfo.statusBarHeight,

@@ -51,7 +51,7 @@ page {
   height: 64rpx;
   line-height: 64rpx;
   background: #5F95A5;
-  color: #8cbb1f;
+  color: black;
   font-size: 32rpx;
   border-radius: 10rpx;
   position: absolute;

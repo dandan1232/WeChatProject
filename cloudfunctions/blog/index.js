@@ -24,7 +24,7 @@ exports.main = async (event, context) => {
       w={
         content:new db.RegExp({
           regexp:keyword,
-          options:'1'
+          options:'i'
         })
       }
     }

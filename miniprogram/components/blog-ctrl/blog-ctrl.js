@@ -1,4 +1,3 @@
-// components/blog-ctrl/blog-ctrl.js
 let userInfo={} //用户信息
 const db=wx.cloud.database() //引入云数据库
 Component({
@@ -10,7 +9,7 @@ Component({
     blog:Object, //博客对象
   },
   options:{
-    styleIsolation:'apply-shared' //可以使用外部样式
+    styleIsolation:'apply-shared', //可以使用外部样式
   },
 
   /**
@@ -29,14 +28,14 @@ Component({
     //获取textarea内容
     onInput(event){
       this.setData({
-        content:event.deatil.value
+        content:event.detail.value
       })
     },
     onComment(){
       //判断用户是否授权
       wx.getSetting({
         success:(res)=>{
-          if(res.authSetting['scope.uerInfo']){
+          if(res.authSetting['scope.userInfo']){
             wx.getUserInfo({
               success:(res)=>{
                 userInfo=res.userInfo

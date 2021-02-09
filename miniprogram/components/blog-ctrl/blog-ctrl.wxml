@@ -21,8 +21,9 @@
 <x-bottom-modal modalShow="{{modalShow}}">
   <view slot="modal-content">
     <!-- 给具名插槽传内容为textarea和button（评论功能所需） -->
-    <textarea bindtap="onInput" name="content" class="comment-content" placeholder="写评论" value="{{content}}"
-      fixed="true"></textarea>
+    <textarea bindinput="onInput" name="content" class="comment-content" placeholder="写评论" value="{{content}}"
+      fixed="true"
+      ></textarea>
     <view class="send" bind:tap="onSend">发送</view>
   </view>
 </x-bottom-modal>
