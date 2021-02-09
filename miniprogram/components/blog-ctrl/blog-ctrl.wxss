@@ -1,0 +1,60 @@
+page {
+  background-color: #EDEDED;
+}
+
+.ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dfddd9;
+}
+
+.ctrl .ctrl-item {
+  flex: 1;
+  height: 68rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inconfont {
+  margin-right: 20rpx;
+  margin-right: 20rpx;
+  font-size: 32rpx;
+}
+
+.item {
+  color: #050514;
+  font-size: 32rpx;
+  font-weight: 400;
+}
+
+.share-btn {
+  background-color: #dfddd9;
+  color: #050514;
+  border: none;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid #ccc;
+}
+
+.comment-content {
+  width: 560rpx;
+  text-align: left;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+
+.send {
+  display: block;
+  width: 100rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  background: #5F95A5;
+  color: #8cbb1f;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}

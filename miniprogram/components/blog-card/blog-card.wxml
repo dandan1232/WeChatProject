@@ -24,4 +24,5 @@
       </view>
     </block>
   </view>
+  <!-- <x-blog-ctrl blogId="{{blog._id}}" blog="{{blog}}"></x-blog-ctrl> -->
 </view>

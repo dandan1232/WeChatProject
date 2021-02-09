@@ -3,7 +3,8 @@
     "x-playlist":"/components/playlist/playlist",
     "x-search":"/components/search/search",
     "x-login":"/components/login/login",
-    "x-blog-card":"/components/blog-card/blog-card"
+    "x-blog-card":"/components/blog-card/blog-card",
+    "x-blog-ctrl":"/components/blog-ctrl/blog-ctrl"
   },
   "enablePullDownRefresh":true
 }
