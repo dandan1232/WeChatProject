@@ -1,102 +1,63 @@
-page{
-  background-color: rgb(185, 140, 140);
-}
-.user{
-  margin-top: 100rpx;
-  width: 100%;
-  height: 400rpx;
-  overflow: hidden;
+page {
+  background-color: #EDEDED;
 }
 
-.user-image{
+.profile-header {
+  background-image: url("https://pic-ldd-test.oss-cn-hangzhou.aliyuncs.com/md/20210210142832.jpeg");
+  background-size: cover;
+  height: 480rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #dfddd9;
+}
+
+.avatar {
   width: 200rpx;
   height: 200rpx;
-  margin: 0rpx auto;
-  margin-top: 50rpx;
-}
-
-.user-image image{
-  width: 100%;
-  height: 100%;
+  display: block;
+  overflow: hidden;
+  border: 6rpx solid #ccc;
   border-radius: 50%;
+  margin-top: 20rpx;
 }
 
-.nickname{
-  margin-top: 10rpx;
-  text-align: center;
-  color: blue;
-  font-size: 40rpx;
+.nickname {
+  font-size: 32rpx;
+  margin-top: 20rpx;
 }
 
+.nav {
+  overflow: hidden;
+  margin: 20rpx;
+  box-sizing: border-box;
+}
 
-.playlist-container{
+.nav-item {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 10rpx;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  min-height: 100rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
 }
 
-.bg {
-  height: 150px;
-  background-color: #d53e37;
-}
-
-.head {
+.content {
+  font-size: 32rpx;
+  line-height: 1.6em;
+  flex: 1;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
-.headIcon {
-  display: flex;
-  justify-content: center;
+.text {
+  color: #4B4B4B;
 }
 
-.login {
-  display: flex;
-  color: #fff;
-  font-size: 15px;
-  margin-top: 15rpx;
-  justify-content: center;
-}
-
-.button {
-  margin: 10px;
-  font-size: 14px;
-}
-
-.head image {
-  border-radius: 50%;
-}
-
-.hr {
-  width: 100%;
-  height: 15px;
-  background-color: #f4f5f6;
-}
-
-.item {
-  display: flex;
-  flex-direction: row;
-}
-
-.title {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  font-size: 15px;
-}
-
-.detail2 {
-  font-size: 15px;
-  position: absolute;
-  right: 10px;
-  height: 50px;
-  line-height: 50px;
-  color: #888;
-}
-
-.line {
-  border: 1px solid #ccc;
-  opacity: 0.2;
+.iconfont icon-xiangyou {
+  font-size: 32rpx;
+  color: 32rpx;
 }

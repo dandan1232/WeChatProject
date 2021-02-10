@@ -1,4 +1,6 @@
-<navigation showIcon='{{false}}' title='音乐' isTransparent="{{true}}"></navigation>
+<!-- 自定义导航，默认带返回图标-->
+<navigation title='音乐'></navigation>
+
 <!-- 全屏毛玻璃效果 -->
 <view wx:if="{{picUrl}}" class="player-container" style="background:url({{picUrl}}) center/cover no-repeat">
 </view>

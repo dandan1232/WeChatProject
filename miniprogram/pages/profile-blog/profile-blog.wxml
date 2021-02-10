@@ -1,0 +1,25 @@
+<!--pages/profile-blog/profile-blog.wxml-->
+<navigation title='我的博客'></navigation>
+<view class="container">
+  <view class="main">
+    <block wx:for="{{blogList}}" wx:key="_id">
+      <view class="main-item">
+        <x-myblog blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goDetail" />
+        <movable-area>
+          <movable-view damping="100" out-of-bounds="true" direction="horizontal" x="{{item.x}}" animation="true"
+            data-index="{{index}}" bind:change="handleMovableChange" bind:touchstart="handleTouchestart"
+            bind:touched="handleTouched">
+            <view class="item">
+              <view class="row">
+                <image src="{{item.avatarUrl}}" class="avatar" />
+                <text class="time">{{item.createTime}}</text>
+              </view>
+              <view class="item-content ellipsis">{{item.content}}</view>
+            </view>
+          </movable-view>
+        </movable-area>
+        <view class="delete-btn" data-index="{{index}}" data-blogid="{{item._id}}" catch:tap="handleDelete">删除</view>
+      </view>
+    </block>
+  </view>
+</view>

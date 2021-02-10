@@ -1,65 +1,29 @@
-<!-- <navigation showIcon='{{false}}' title='我的' isTransparent="{{true}}"></navigation> -->
+<view class="profile-header">
+  <view class="avatar">
+    <!-- 使用open-data来获得头像和昵称 -->
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="nickname"></open-data>
+</view>
 
-<!-- 判断是否有封面图，有就作为顶部view区域的背景图 -->
-<view class="user" style="background-image:url('https://pic-ldd-test.oss-cn-hangzhou.aliyuncs.com/md/20210203183202.png')">
-  <view class="user-image">
-    <image src="{{user.avatarUrl}}"></image>
+<view class="nav">
+  <view class="nav-item">
+    <!-- navigator可以方便地实现页面跳转，这里把hover-class置为none，去掉点击变灰地效果，自己可以尝试下（类似网页a标签地处理） -->
+    <navigator class="content" hover-class="none" url="/pages/play-history/play-history">
+      <text class="text">最近播放</text>
+      <i class="iconfont icon-xiangyou"></i>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/profile-blog/profile-blog">
+      <text class="text">我的博客</text>
+      <i class="iconfont icon-xiangyou"></i>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <view class="content" bind:tap="onTapQrCode">
+      <tex class="text">小程序码</tex>
+      <i class="iconfont icon-xiangyou"></i>
     </view>
-    <view class="nickname">{{user.nickName}}</view>
-  </view>
-
-<!-- 遮罩层 -->
-<view class='detail-mask'></view>
-
-<view class="playlist-container">
-  <block wx:for="{{getUserPlaylist}}" wx:key="_id">
-    <x-playlist playlist="{{item}}"></x-playlist>
-  </block>
-</view>
-
-
-<view class="hr"></view>
-<view class='item'>
-  <view class="title">支付</view>
-  <view class="detail2">
-    <text>></text>
   </view>
 </view>
-<view class="line"></view>
-
-<view class='item'>
-  <view class="title">收藏</view>
-  <view class="detail2">
-    <text>></text>
-  </view>
-</view>
-
-<view class="hr"></view>
-<view class='item'>
-  <view class="title">朋友圈</view>
-  <view class="detail2">
-    <text> ></text>
-  </view>
-</view>
-<view class="line"></view>
-<view class="item">
-  <view class="title">卡包</view>
-  <view class="detail2">
-    <text> ></text>
-  </view>
-</view>
-<view class="line"></view>
-<view class="item">
-  <view class="title">表情</view>
-  <view class="detail2">
-    <text> ></text>
-  </view>
-</view>
-<view class="line"></view>
-<view class="item">
-  <view class="title">设置</view>
-  <view class="detail2">
-    <text> ></text>
-  </view>
-</view>
-<view class="hr"></view>

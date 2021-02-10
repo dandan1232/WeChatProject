@@ -1,0 +1,2 @@
+<navigation title='最近播放'></navigation>
+<x-musiclist musiclist="{{musiclist}}" />

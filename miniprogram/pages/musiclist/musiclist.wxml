@@ -83,7 +83,7 @@
         <text>{{listInfo.commentCount}}</text>
       </view>
       <view class="last">
-      <text class="icontfont icon-fenxiang"></text>
+      <text class="iconfont icon-fenxiang"></text>
       <text>{{listInfo.shareCount}}</text>
       </view>
     </view>

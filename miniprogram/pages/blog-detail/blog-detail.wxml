@@ -11,7 +11,7 @@
   <!-- 遍历博客的评论数组 -->
   <block wx:for="{{commentList}}" wx:key="_id">
     <view class="comment">
-      <!-- 评论人头像和昵称 -->jjj
+      <!-- 评论人头像和昵称 -->
       <view class="comment-title">
         <image class="comment-avatar" src="{{item.avatarUrl}}" />
         <text class="comment-nickname">{{item.nickName}}</text>

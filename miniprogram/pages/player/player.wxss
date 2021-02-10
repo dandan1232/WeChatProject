@@ -31,6 +31,7 @@
 }
 
 .player-disc{
+  margin-top: 60px;
   width: 592rpx;
   height: 592rpx;
   background: url('https://pic-ldd-test.oss-cn-hangzhou.aliyuncs.com/md/20210129175524.png') no-repeat center/contain;
